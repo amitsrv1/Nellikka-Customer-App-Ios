@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "416476394675",
+    "project_id": "hksn-staff",
+    "storage_bucket": "hksn-staff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416476394675:android:de1dbc1d0ef9b01ca36cc6",
+        "android_client_info": {
+          "package_name": "com.example.nellikka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416476394675-1v6ssr3m0it6msdl82h40e9catsevj8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA34Fc4a1eCEVyIjPCfwiGnbhgmOy-ZWuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416476394675-1v6ssr3m0it6msdl82h40e9catsevj8c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "416476394675-qsus7rpfjmjpod76t9a3jst52grlh7ul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nellikka.nellikka-staff123"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416476394675:android:316c0817a6ba105ea36cc6",
+        "android_client_info": {
+          "package_name": "com.nellikka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416476394675-1v6ssr3m0it6msdl82h40e9catsevj8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA34Fc4a1eCEVyIjPCfwiGnbhgmOy-ZWuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416476394675-1v6ssr3m0it6msdl82h40e9catsevj8c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "416476394675-qsus7rpfjmjpod76t9a3jst52grlh7ul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nellikka.nellikka-staff123"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416476394675:android:6775cdcd871cc3cfa36cc6",
+        "android_client_info": {
+          "package_name": "com.nellikka.nellikka_staff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416476394675-1v6ssr3m0it6msdl82h40e9catsevj8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA34Fc4a1eCEVyIjPCfwiGnbhgmOy-ZWuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416476394675-1v6ssr3m0it6msdl82h40e9catsevj8c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "416476394675-qsus7rpfjmjpod76t9a3jst52grlh7ul.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nellikka.nellikka-staff123"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

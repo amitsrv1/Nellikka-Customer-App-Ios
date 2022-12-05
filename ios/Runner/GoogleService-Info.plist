@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>416476394675-vuglekcnvn1bn4ttbajkg4chujhanm3a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.416476394675-vuglekcnvn1bn4ttbajkg4chujhanm3a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAuUDOZrcfpl8xS-WlvW6pBaA3cqhuouyM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>416476394675</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.nellikka</string>
+	<key>PROJECT_ID</key>
+	<string>hksn-staff</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hksn-staff.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:416476394675:ios:1bf8286c8a97a96ba36cc6</string>
+</dict>
+</plist>
