@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-const custom_green = Color.fromARGB(255, 63, 165, 74);
-const custom_orange = Color.fromARGB(255, 255, 111, 65);
-const custom_red = Color.fromARGB(255, 243, 2, 2);
-const custom_teal = Color.fromARGB(255, 221, 251, 230);
-const custom_violet = Color.fromARGB(255, 89, 89, 124);
-const custom_blue = Color.fromARGB(255, 115, 154, 240);
-const light_blue = Color.fromARGB(255, 246, 250, 255);
+const background_white = CupertinoColors.white;
+const custom_green = CupertinoColors.systemGreen;
+const custom_orange = CupertinoColors.activeOrange;
+const custom_red = CupertinoColors.systemRed;
+const custom_black = CupertinoColors.black;
+const disabled_color = const Color(0xFF3FA54A);
+const transparent_color = Color.fromARGB(255, 211, 211, 211);
+const custom_grey = CupertinoColors.systemGrey;

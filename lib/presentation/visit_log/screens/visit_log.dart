@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -180,7 +181,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
     return Card(
       child: Container(
         width: 1.sw,
-        color: Colors.white,
+        color: background_white,
         padding: const EdgeInsets.symmetric(horizontal: 8).copyWith(
           top: 14.h,
           bottom: isExpanded ? 18.h : 8.h,
@@ -208,7 +209,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                             style: GoogleFonts.mulish(
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: background_white,
                             ),
                           ),
                           Text(
@@ -216,7 +217,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                             style: GoogleFonts.mulish(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: background_white,
                             ),
                           ),
                           Text(
@@ -224,7 +225,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                             style: GoogleFonts.mulish(
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: background_white,
                             ),
                           ),
                           Text(
@@ -232,7 +233,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                             style: GoogleFonts.mulish(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: background_white,
                             ),
                           ),
                         ],
@@ -429,7 +430,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                                   style: GoogleFonts.mulish(
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.white,
+                                    color: background_white,
                                   ),
                                 ),
                               ],
@@ -454,7 +455,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                                   style: GoogleFonts.mulish(
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.white,
+                                    color: background_white,
                                   ),
                                 ),
                               ],
@@ -477,7 +478,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ),
@@ -500,7 +501,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                                   style: GoogleFonts.mulish(
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.white,
+                                    color: background_white,
                                   ),
                                 ),
                               ],
@@ -612,7 +613,7 @@ class _CustomExpandableTileState extends State<CustomExpandableTile> {
                                             "Paid",
                                             style: GoogleFonts.mulish(
                                               fontSize: 11,
-                                              color: Colors.white,
+                                              color: background_white,
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),

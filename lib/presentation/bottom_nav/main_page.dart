@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nellikka/custom_colors.dart';
 import 'package:nellikka/presentation/chat_box/screens/chat_box.dart';
 import 'package:nellikka/presentation/dashboard/screens/dashboard.dart';
 import 'package:nellikka/presentation/phonebook/screens/phonebook.dart';
@@ -34,9 +36,9 @@ class MainPage extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton.small(
           onPressed: () {
-             Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ChatBox()));
+             Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>const ChatBox()));
           },
-          backgroundColor:  Colors.white,
+          backgroundColor:  background_white,
           tooltip: 'UPDATES',
           child: Stack(
             children: [
@@ -63,7 +65,7 @@ class MainPage extends StatelessWidget {
           padding: const EdgeInsets.only(left:0.0,right: 25),
           child: Container(
             height: 50,
-            color:Colors.white,
+            color:background_white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -94,9 +96,9 @@ class MainPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                InkWell(
+                GestureDetector(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WasteRequestScreen()));
+                    Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>WasteRequestScreen()));
                   },
                   child: Column(
                     children: [
@@ -123,9 +125,9 @@ class MainPage extends StatelessWidget {
                     ],
                   ),
                 ),
-               InkWell(
+               GestureDetector(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ChatBox()));
+                    Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>const ChatBox()));
                   },
                   child: Column(
                     children: [
@@ -141,9 +143,9 @@ class MainPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                InkWell(
+                GestureDetector(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>VisitLogScreen()));
+                    Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>VisitLogScreen()));
                   },
                   child: Column(
                     children: [
@@ -168,9 +170,9 @@ class MainPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                InkWell(
+                GestureDetector(
                   onTap: () {
-                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const PhoneBook()));
+                         Navigator.of(context).push(CupertinoPageRoute(builder: (context)=> const PhoneBook()));
                       },
                   child: Column(
                     children: [

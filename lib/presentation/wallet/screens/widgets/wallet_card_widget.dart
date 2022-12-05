@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/dto/walletLogDto/controller/wallet_controller.dart';
 import 'package:get/get.dart';
@@ -38,9 +39,9 @@ class WalletCardWidget extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8.0, right: 8),
-                        child: InkWell(
+                        child: GestureDetector(
                           onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const AddCash()));
+                            Navigator.of(context).push(CupertinoPageRoute(builder: (context)=>const AddCash()));
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

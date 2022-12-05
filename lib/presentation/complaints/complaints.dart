@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nellikka/custom_colors.dart';
 import 'package:nellikka/presentation/complaints/add_complaint_tab.dart';
 import 'package:nellikka/presentation/complaints/complaint_status.dart';
 import 'package:nellikka/presentation/waste_request/waste_request_tab.dart';
@@ -32,12 +34,14 @@ class _ComplaintsState extends State<Complaints> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const PreferredSize(
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: const PreferredSize(
           preferredSize: Size.fromHeight(60),
           child: AppBarWidget(title: "Complaints"),
         ),
-        body: SafeArea(
+        ),
+        child: SafeArea(
           left: true,
           right: true,
           child: Padding(
@@ -63,7 +67,7 @@ class _ComplaintsState extends State<Complaints> {
                             decoration: BoxDecoration(
                               color: selectedIndex == 0
                                   ? const Color(0xff3FA54A)
-                                  : Colors.white,
+                                  : background_white,
                               borderRadius: BorderRadius.circular(5),
                               border: Border.all(
                                 color: const Color(0xff3FA54A),
@@ -77,7 +81,7 @@ class _ComplaintsState extends State<Complaints> {
                                       fontSize: 15,
                                       fontWeight: FontWeight.w600,
                                       color: selectedIndex == 0
-                                          ? Colors.white
+                                          ? background_white
                                           : const Color(0xff3FA54A),
                                     ),
                                   ),
@@ -99,7 +103,7 @@ class _ComplaintsState extends State<Complaints> {
                             decoration: BoxDecoration(
                               color: selectedIndex == 1
                                   ? const Color(0xff3FA54A)
-                                  : Colors.white,
+                                  : background_white,
                               borderRadius: BorderRadius.circular(5),
                               border: Border.all(
                                 color: const Color(0xff3FA54A),
@@ -113,7 +117,7 @@ class _ComplaintsState extends State<Complaints> {
                                       fontSize: 15,
                                       fontWeight: FontWeight.w600,
                                       color: selectedIndex == 1
-                                          ? Colors.white
+                                          ? background_white
                                           : const Color(0xff3FA54A),
                                     ),
                                   ),

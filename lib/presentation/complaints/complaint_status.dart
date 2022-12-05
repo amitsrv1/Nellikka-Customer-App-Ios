@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -127,7 +128,7 @@ class _ComplaintStatusTileState extends State<ComplaintStatusTile> {
     
     return Container(
       width: 1.sw,
-      color: Colors.white,
+      color: background_white,
       padding: EdgeInsets.symmetric(horizontal: 8.w).copyWith(
         top: 14.h,
         bottom: isExtended ? 14.h : 10.h,
@@ -154,7 +155,7 @@ class _ComplaintStatusTileState extends State<ComplaintStatusTile> {
                           style: GoogleFonts.mulish(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: background_white,
                           ),
                         ),
                         Text(
@@ -162,7 +163,7 @@ class _ComplaintStatusTileState extends State<ComplaintStatusTile> {
                           style: GoogleFonts.mulish(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: background_white,
                           ),
                         ),
                         Text(
@@ -170,7 +171,7 @@ class _ComplaintStatusTileState extends State<ComplaintStatusTile> {
                           style: GoogleFonts.mulish(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: background_white,
                           ),
                         ),
                         Text(
@@ -178,7 +179,7 @@ class _ComplaintStatusTileState extends State<ComplaintStatusTile> {
                           style: GoogleFonts.mulish(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: background_white,
                           ),
                         ),
                       ],

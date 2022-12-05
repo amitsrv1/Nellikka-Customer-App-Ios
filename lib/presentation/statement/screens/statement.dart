@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -21,13 +22,13 @@ class StatementScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return CupertinoPageScaffold(
       //backgroundColor: const Color(0x80E5E5E5),
-      appBar: const PreferredSize(
+      navigationBar: CupertinoNavigationBar(middle: const PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: AppBarWidget(title: "Statement"),
-      ),
-      body: SafeArea(
+      ),),
+      child: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
             left: 8.w,
@@ -58,7 +59,7 @@ class StatementScreen extends StatelessWidget {
                               style: GoogleFonts.mulish(
                                 fontSize: 15.sp,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.white,
+                                color: background_white,
                               ),
                             ),
                           ],
@@ -76,7 +77,7 @@ class StatementScreen extends StatelessWidget {
                             style: GoogleFonts.mulish(
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: background_white,
                             ),
                           ),
                         ),
@@ -94,7 +95,7 @@ class StatementScreen extends StatelessWidget {
                               style: GoogleFonts.mulish(
                                 fontSize: 15.sp,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.white,
+                                color: background_white,
                               ),
                             ),
                           ],
@@ -113,7 +114,7 @@ class StatementScreen extends StatelessWidget {
                               style: GoogleFonts.mulish(
                                 fontSize: 15.sp,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.white,
+                                color: background_white,
                               ),
                             ),
                           ],
@@ -239,13 +240,13 @@ class StatementScreen extends StatelessWidget {
                                                     const SizedBox(
                                                       width: 5,
                                                     ),
-                                                    // InkWell(
+                                                    // GestureDetector(
                                                     //   onTap: () async {
                                                     //     await controller
                                                     //         .apiSingleUnBilledStatement();
                                                     //     if (controller
                                                     //         .uAvailable) {
-                                                    //       showDialog(
+                                                    //       showCupertinoDialog(
                                                     //           context: context,
                                                     //           builder:
                                                     //               (context) {
@@ -268,7 +269,7 @@ class StatementScreen extends StatelessWidget {
                                                     //       child: CircleAvatar(
                                                     //         radius: 13,
                                                     //         backgroundColor:
-                                                    //             Colors.white,
+                                                    //             background_white,
                                                     //         child: Image.asset(
                                                     //           "assets/images/eye-icon.png",
                                                     //           width: 16,
@@ -285,13 +286,13 @@ class StatementScreen extends StatelessWidget {
                                                       backgroundColor:
                                                           const Color(
                                                               0xFFD5E8FF),
-                                                      child: InkWell(
+                                                      child: GestureDetector(
                                                         onTap: () async {
                                                           await controller
                                                               .apiSingleUnBilledStatement();
                                                           if (controller
                                                               .uAvailable) {
-                                                            showDialog(
+                                                            showCupertinoDialog(
                                                                 context:
                                                                     context,
                                                                 builder:
@@ -303,7 +304,7 @@ class StatementScreen extends StatelessWidget {
                                                         child: CircleAvatar(
                                                           radius: 11,
                                                           backgroundColor:
-                                                              Colors.white,
+                                                              background_white,
                                                            child: Image.asset(
                                                             "assets/images/eye-icon.png",
                                                             width: 14,
@@ -450,7 +451,7 @@ class StatementScreen extends StatelessWidget {
                                                         //                   .singleCreditnote
                                                         //                   .statement ==
                                                         //               null) {
-                                                        //         showDialog(
+                                                        //         showCupertinoDialog(
                                                         //             context:
                                                         //                 context,
                                                         //             builder:
@@ -466,7 +467,7 @@ class StatementScreen extends StatelessWidget {
                                                         //                   .statement ==
                                                         //               null) {
                                                         //         //credit note
-                                                        //         showDialog(
+                                                        //         showCupertinoDialog(
                                                         //             context:
                                                         //                 context,
                                                         //             builder:
@@ -475,7 +476,7 @@ class StatementScreen extends StatelessWidget {
                                                         //             });
                                                         //       } else {
                                                         //         // } else if(controller.singleInvoice.statement == null && controller.singleCreditnote.statement == null ){
-                                                        //         showDialog(
+                                                        //         showCupertinoDialog(
                                                         //             context:
                                                         //                 context,
                                                         //             builder:
@@ -500,7 +501,7 @@ class StatementScreen extends StatelessWidget {
                                                         //     child: CircleAvatar(
                                                         //       radius: 13,
                                                         //       backgroundColor:
-                                                        //           Colors.white,
+                                                        //           background_white,
                                                         //       child: Image.asset(
                                                         //         "assets/images/eye-icon.png",
                                                         //         width: 16,
@@ -516,7 +517,7 @@ class StatementScreen extends StatelessWidget {
                                                           backgroundColor:
                                                               const Color(
                                                                   0xFFD5E8FF),
-                                                          child: InkWell(
+                                                          child: GestureDetector(
                                                             onTap: () async {
                                                               await controller
                                                                   .apiSingleStatement(data
@@ -532,7 +533,7 @@ class StatementScreen extends StatelessWidget {
                                                                             .singleCreditnote
                                                                             .statement ==
                                                                         null) {
-                                                                  showDialog(
+                                                                  showCupertinoDialog(
                                                                       context:
                                                                           context,
                                                                       builder:
@@ -548,7 +549,7 @@ class StatementScreen extends StatelessWidget {
                                                                             .statement ==
                                                                         null) {
                                                                   //credit note
-                                                                  showDialog(
+                                                                  showCupertinoDialog(
                                                                       context:
                                                                           context,
                                                                       builder:
@@ -557,7 +558,7 @@ class StatementScreen extends StatelessWidget {
                                                                       });
                                                                 } else {
                                                                   // } else if(controller.singleInvoice.statement == null && controller.singleCreditnote.statement == null ){
-                                                                  showDialog(
+                                                                  showCupertinoDialog(
                                                                       context:
                                                                           context,
                                                                       builder:
@@ -570,7 +571,7 @@ class StatementScreen extends StatelessWidget {
                                                             child: CircleAvatar(
                                                               radius: 11,
                                                               backgroundColor:
-                                                                  Colors.white,
+                                                                  background_white,
                                                               child:
                                                                   Image.asset(
                                                                 "assets/images/eye-icon.png",
@@ -617,13 +618,13 @@ class StatementScreen extends StatelessWidget {
     return GetBuilder<StatementController>(
       builder: (controller) => controller.singleStatement.statement == null
           ? const SizedBox()
-          : Dialog(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
-              ),
-              insetPadding: EdgeInsets.symmetric(
-                horizontal: 8.w,
-              ),
+          : CupertinoDialogAction(
+              // shape: RoundedRectangleBorder(
+              //   borderRadius: BorderRadius.circular(5),
+              // ),
+              // insetPadding: EdgeInsets.symmetric(
+              //   horizontal: 8.w,
+              // ),
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 10.w,
@@ -685,7 +686,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -703,7 +704,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -721,7 +722,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -739,7 +740,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -783,7 +784,7 @@ class StatementScreen extends StatelessWidget {
                             style: GoogleFonts.mulish(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                              color: custom_black,
                             ),
                           ),
                         ),
@@ -870,7 +871,7 @@ class StatementScreen extends StatelessWidget {
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.w500,
                           fontSize: 18.sp,
-                          color: Colors.white,
+                          color: background_white,
                         ),
                       ),
                       shape: RoundedRectangleBorder(
@@ -956,7 +957,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -974,7 +975,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -992,7 +993,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -1010,7 +1011,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -1054,7 +1055,7 @@ class StatementScreen extends StatelessWidget {
                             style: GoogleFonts.mulish(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                              color: custom_black,
                             ),
                           ),
                         ),
@@ -1161,7 +1162,7 @@ class StatementScreen extends StatelessWidget {
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.w500,
                           fontSize: 18.sp,
-                          color: Colors.white,
+                          color: background_white,
                         ),
                       ),
                       shape: RoundedRectangleBorder(
@@ -1247,7 +1248,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -1265,7 +1266,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -1283,7 +1284,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -1301,7 +1302,7 @@ class StatementScreen extends StatelessWidget {
                                 style: GoogleFonts.mulish(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                                  color: background_white,
                                 ),
                               ),
                             ],
@@ -1427,7 +1428,7 @@ class StatementScreen extends StatelessWidget {
                         style: GoogleFonts.roboto(
                           fontWeight: FontWeight.w500,
                           fontSize: 18.sp,
-                          color: Colors.white,
+                          color: background_white,
                         ),
                       ),
                       shape: RoundedRectangleBorder(
@@ -1510,7 +1511,7 @@ class StatementScreen extends StatelessWidget {
                         style: GoogleFonts.mulish(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                          color: background_white,
                         ),
                       ),
                     ),
@@ -1525,7 +1526,7 @@ class StatementScreen extends StatelessWidget {
                         style: GoogleFonts.mulish(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                          color: background_white,
                         ),
                       ),
                     ),
@@ -1540,7 +1541,7 @@ class StatementScreen extends StatelessWidget {
                         style: GoogleFonts.mulish(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                          color: background_white,
                         ),
                       ),
                     ),
@@ -1555,7 +1556,7 @@ class StatementScreen extends StatelessWidget {
                         style: GoogleFonts.mulish(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                          color: background_white,
                         ),
                       ),
                     ),
@@ -1705,7 +1706,7 @@ class StatementScreen extends StatelessWidget {
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.w500,
                     fontSize: 18.sp,
-                    color: Colors.white,
+                    color: background_white,
                   ),
                 ),
                 shape: RoundedRectangleBorder(

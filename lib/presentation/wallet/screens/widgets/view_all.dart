@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/custom_colors.dart';
@@ -12,8 +13,8 @@ class ViewAllWallet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GetBuilder<WalletLogController>(
+    return CupertinoPageScaffold(
+      child: GetBuilder<WalletLogController>(
           init: WalletLogController(),
           builder: (controller) {
             return controller.isLoading

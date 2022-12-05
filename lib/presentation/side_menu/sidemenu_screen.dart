@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -161,7 +162,7 @@ class _SideMenuState extends State<SideMenu> {
                                             ? const Center(
                                                 child: Center(
                                                   child: SpinKitThreeBounce(
-                                                      color: custom_teal),
+                                                      color: custom_green),
                                                 ),
                                               )
                                             : FittedBox(
@@ -225,7 +226,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => const ProfileScreen()));
                             },
                           ),
@@ -309,7 +310,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => const WalletScreen()));
                             },
                           ),
@@ -349,7 +350,7 @@ class _SideMenuState extends State<SideMenu> {
                                     ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => const ChatBox()));
                             },
                           ),
@@ -376,7 +377,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) =>
                                       const InvoiceListScreen()));
                             },
@@ -404,7 +405,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => ReceiptListScreen()));
                             },
                           ),
@@ -431,7 +432,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => StatementScreen()));
                             },
                           ),
@@ -458,7 +459,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => VisitLogScreen()));
                             },
                           ),
@@ -485,7 +486,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) =>
                                        WasteRequestScreen()));
                             },
@@ -513,7 +514,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: ((context) => const PhoneBook())));
                             },
                           ),
@@ -540,7 +541,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => const Complaints()));
                             },
                           ),
@@ -658,7 +659,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => const AboutUs()));
                             },
                           ),
@@ -685,7 +686,7 @@ class _SideMenuState extends State<SideMenu> {
                             ),
                             onTap: () {
                               Navigator.pop(context);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(CupertinoPageRoute(
                                   builder: (context) => const Contact()));
                             },
                           ),

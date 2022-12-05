@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/custom_colors.dart';
@@ -57,7 +57,7 @@ class _WasteRequestViewState extends State<WasteRequestView> {
                             itemCount: controller.categories.data!.length,
                             itemBuilder: (context, index) {
                               Datum data = controller.categories.data![index];
-                              return InkWell(
+                              return GestureDetector(
                                 onTap: () {
                                   controller.selectedMethod[index] =
                                       !controller.selectedMethod[index];
@@ -95,7 +95,7 @@ class _WasteRequestViewState extends State<WasteRequestView> {
                                             color: controller.selectedMethod[
                                                         index] ==
                                                     true
-                                                ? Colors.white
+                                                ? background_white
                                                 : const Color(0xff5E88E5),
                                           ),
                                         ),
@@ -127,20 +127,16 @@ class _WasteRequestViewState extends State<WasteRequestView> {
                     SizedBox(
                       height: 5.h,
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: const BorderSide(
-                            color: Color(0xffB8D0D6),
-                          ),
-                        ),
-                        hintText: "Weight",
-                        hintStyle: GoogleFonts.mulish(
+                    CupertinoTextFormFieldRow(
+                        placeholder: "Weight",
+                        placeholderStyle: GoogleFonts.mulish(
                           fontWeight: FontWeight.w600,
                           fontSize: 15.sp,
                           color: const Color(0xff959FB4),
                         ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                      
                       ),
                       controller: controller.weight,
                       style: GoogleFonts.mulish(
@@ -179,20 +175,17 @@ class _WasteRequestViewState extends State<WasteRequestView> {
                     SizedBox(
                       height: 5.h,
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: const BorderSide(
-                            color: Color(0xffB8D0D6),
-                          ),
-                        ),
-                        hintText: "No. of Bags ",
-                        hintStyle: GoogleFonts.mulish(
+                    CupertinoTextFormFieldRow(
+                       placeholder: "No. of Bags ",
+                        placeholderStyle: GoogleFonts.mulish(
                           fontWeight: FontWeight.w600,
                           fontSize: 15.sp,
                           color: const Color(0xff959FB4),
                         ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                       
+                       
                       ),
                       controller: controller.quantity,
                       style: GoogleFonts.mulish(
@@ -217,13 +210,10 @@ class _WasteRequestViewState extends State<WasteRequestView> {
                       child: SizedBox(
                         height: 50,
                         width: 287,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF3FA54A),
-                              disabledBackgroundColor:
-                                  const Color.fromARGB(255, 55, 97, 59),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5))),
+                        child: CupertinoButton(
+                          disabledColor:const Color.fromARGB(255, 55, 97, 59),
+                          color:const Color(0xFF3FA54A),  
+                         
                           onPressed: _enableBtn
                               ? () {
                                   if (controller.formKey.currentState!
@@ -253,8 +243,8 @@ class _WasteRequestViewState extends State<WasteRequestView> {
                                       toastLength: Toast.LENGTH_LONG,
                                       gravity: ToastGravity.SNACKBAR,
                                       timeInSecForIosWeb: 1,
-                                      backgroundColor: Colors.red,
-                                      textColor: Colors.white,
+                                      backgroundColor: custom_red,
+                                      textColor: background_white,
                                       fontSize: 16.sp,
                                     );
                                   }   
@@ -266,7 +256,7 @@ class _WasteRequestViewState extends State<WasteRequestView> {
                             style: GoogleFonts.roboto(
                               fontSize: 18,
                               fontWeight: FontWeight.w500,
-                              color: Colors.white,
+                              color: background_white,
                             ),
                           ),
                         ),

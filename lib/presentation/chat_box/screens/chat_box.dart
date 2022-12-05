@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/custom_colors.dart';
@@ -12,7 +13,6 @@ import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class ChatBox extends StatefulWidget {
   const ChatBox({Key? key}) : super(key: key);
 
@@ -23,16 +23,18 @@ class ChatBox extends StatefulWidget {
 class _ChatBoxState extends State<ChatBox> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return CupertinoPageScaffold(
         backgroundColor: const Color.fromARGB(250, 241, 240, 240),
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(60),
-          child: AppBarWidget(title: "Chat Box"),
+        navigationBar: CupertinoNavigationBar(
+          middle: const PreferredSize(
+            preferredSize: Size.fromHeight(60),
+            child: AppBarWidget(title: "Chat Box"),
+          ),
         ),
         //appBar: AppBar(centerTitle: true,backgroundColor: Color.fromARGB(220, 62, 224, 12).withOpacity(0.9),
-        // title: Text('Notification',style: GoogleFonts.mulish(color: Colors.white),),
+        // title: Text('Notification',style: GoogleFonts.mulish(color: background_white),),
         // ),
-        body: GetBuilder<NofificationListController>(
+        child: GetBuilder<NofificationListController>(
             init: NofificationListController(),
             builder: (controller) {
               return Stack(
@@ -40,7 +42,7 @@ class _ChatBoxState extends State<ChatBox> {
                   Container(
                       constraints: const BoxConstraints.expand(),
                       decoration: const BoxDecoration(
-                          color: Colors.white,
+                          color: background_white,
                           image: DecorationImage(
                             image: AssetImage(
                                 "assets/images/chat_back_ground.png"),
@@ -139,7 +141,7 @@ Widget newWidget(NofificationListController notificationListController) {
                   return SizedBox(
                     height: 40,
                     child: Center(
-                      child: Card(
+                      child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(8),
                           child: message.notificationDate == null
@@ -167,7 +169,8 @@ Widget newWidget(NofificationListController notificationListController) {
                         DateFormat("HH:mm:ss").parse(message.notificationTime!);
                     String formattedTime = tFormat.format(parseTime);
                     return formattedTime;
-                  }                  
+                  }
+
                   return Container(
                     padding: const EdgeInsets.only(
                         left: 14, right: 14, top: 5, bottom: 5),
@@ -185,8 +188,8 @@ Widget newWidget(NofificationListController notificationListController) {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, bottom: 5,top: 5),
+                              padding: const EdgeInsets.only(
+                                  left: 8.0, bottom: 5, top: 5),
                               child: Text(
                                 'Nellikka',
                                 style: GoogleFonts.mulish(
@@ -207,12 +210,14 @@ Widget newWidget(NofificationListController notificationListController) {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 5,),
+                            const SizedBox(
+                              height: 5,
+                            ),
                             message.notificationImage == null ||
                                     message.notificationImage == ''
                                 ? Container()
                                 : Center(
-                                   // padding: const EdgeInsets.all(8.0),
+                                    // padding: const EdgeInsets.all(8.0),
                                     child: CachedNetworkImage(
                                       imageUrl:
                                           "https://nodeapitest.nellikkastore.com/uploads/notification_images/${message.notificationImage}",

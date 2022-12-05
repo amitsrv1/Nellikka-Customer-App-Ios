@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter/cupertino.dart';
+import 'package:nellikka/custom_colors.dart';
 showAlertDialog(BuildContext context, String alertTitle, String alertMessage,
     continueMsg, dismissMsg, VoidCallback? onPressed) {
   // set up the buttons
@@ -9,45 +10,30 @@ showAlertDialog(BuildContext context, String alertTitle, String alertMessage,
   Widget continueButton = SizedBox(
     height: 40,
     width: 125,
-    child: ElevatedButton(
-      style:ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xff3FA54A),
-        side: const BorderSide(
-          color: Color(0xff3FA54A),
-        ),
-        shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
-        ),
+    child: CupertinoButton(
+       borderRadius: BorderRadius.circular(5),
+      color: const Color(0xff3FA54A),
       
-      ),
       onPressed: onPressed,
-      child: Center(child: Text(continueMsg,textAlign: TextAlign.center,style: GoogleFonts.mulish(color:Colors.white))),
+      child: Center(child: Text(continueMsg,textAlign: TextAlign.center,style: GoogleFonts.mulish(color:background_white))),
     ),
   );
   Widget cancelButton = SizedBox(
      height: 40,
     width: 125,
-    child: ElevatedButton(
-      child:Text(dismissMsg,textAlign: TextAlign.center,style: GoogleFonts.mulish(color:Colors.green),),
+    child: CupertinoButton(
+    color: const Color(0xFFFFFFFF),
+      child:Text(dismissMsg,textAlign: TextAlign.center,style: GoogleFonts.mulish(color:custom_green),),
       onPressed: () {
         Navigator.pop(context);
       },
-      style:ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFFFFFFFF),
-        side: const BorderSide(
-          color: Color(0xff3FA54A),
-        ),
-        shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
-        ),
       
-      )
     ),
   );
 
   // set up the AlertDialog
-  AlertDialog alert = AlertDialog(
-    title: Center(child: Text(alertTitle,style: GoogleFonts.mulish(color:Colors.green,fontWeight: FontWeight.w800))),
+  CupertinoAlertDialog alert =  CupertinoAlertDialog(
+    title: Center(child: Text(alertTitle,style: GoogleFonts.mulish(color:custom_green,fontWeight: FontWeight.w800))),
     content: SingleChildScrollView(
       child: ListBody(
         children: <Widget>[Text(alertMessage,textAlign:TextAlign.center,style: GoogleFonts.mulish(color:const Color(0xff8A8A8A),))],
@@ -60,7 +46,7 @@ showAlertDialog(BuildContext context, String alertTitle, String alertMessage,
   );
 
   // show the dialog
-  showDialog(
+  showCupertinoDialog(
     context: context,
     builder: (BuildContext context) {
       return alert;

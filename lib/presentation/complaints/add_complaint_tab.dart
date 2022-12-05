@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
@@ -243,28 +243,29 @@ class CustomerAddNewComplaint extends StatelessWidget {
                         SizedBox(
                           height: 5,
                         ),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            hintText: 'Comment',
-                            hintStyle: GoogleFonts.mulish(
+                        CupertinoTextFormFieldRow(
+                          placeholder: 'Comment',
+                            placeholderStyle: GoogleFonts.mulish(
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
-                              color: Colors.grey,
+                              color: custom_grey,
                             ),
-                            contentPadding:
-                                EdgeInsets.symmetric(horizontal: 11),
-                            border: OutlineInputBorder(
+                          decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5.0),
-                              borderSide: BorderSide(
-                                  width: 1, color: const Color(0xffB8D0D6)),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0),
-                              borderSide: BorderSide(
-                                  width: 1, color: const Color(0xffB8D0D6)),
-                            ),
-                            fillColor: const Color(0xffF8FBFF),
-                            filled: true,
+                            // contentPadding:
+                            //     EdgeInsets.symmetric(horizontal: 11),
+                            // border: OutlineInputBorder(
+                            //   borderRadius: BorderRadius.circular(5.0),
+                            //   borderSide: BorderSide(
+                            //       width: 1, color: const Color(0xffB8D0D6)),
+                            // ),
+                            // enabledBorder: OutlineInputBorder(
+                            
+                            //   borderSide: BorderSide(
+                            //       width: 1, color: const Color(0xffB8D0D6)),
+                            // ),
+                            // fillColor: const Color(0xffF8FBFF),
+                            // filled: true,
                           ),
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -325,7 +326,7 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             height: 91,
                                             width: 88,
                                             child: Icon(
-                                              Icons.photo,
+                                             CupertinoIcons.photo,
                                               color: Color(0xFFC4C4C4),
                                             ),
                                           ),
@@ -345,8 +346,8 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             controller.update();
                                           },
                                           child: Icon(
-                                            Icons.cancel_outlined,
-                                            color: Colors.red,
+                                           CupertinoIcons.delete,
+                                            color: custom_red,
                                             size: 25,
                                           ),
                                         ),
@@ -382,7 +383,7 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             height: 91,
                                             width: 88,
                                             child: Icon(
-                                              Icons.photo,
+                                             CupertinoIcons.photo,
                                               color: Color(0xFFC4C4C4),
                                             ),
                                           ),
@@ -402,8 +403,8 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             controller.update();
                                           },
                                           child: Icon(
-                                            Icons.cancel_outlined,
-                                            color: Colors.red,
+                                           CupertinoIcons.delete,
+                                            color: custom_red,
                                             size: 25,
                                           ),
                                         ),
@@ -439,7 +440,7 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             height: 91,
                                             width: 88,
                                             child: Icon(
-                                              Icons.photo,
+                                             CupertinoIcons.photo,
                                               color: Color(0xFFC4C4C4),
                                             ),
                                           ),
@@ -459,8 +460,8 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             controller.update();
                                           },
                                           child: Icon(
-                                            Icons.cancel_outlined,
-                                            color: Colors.red,
+                                           CupertinoIcons.delete,
+                                            color: custom_red,
                                             size: 25,
                                           ),
                                         ),
@@ -496,7 +497,7 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             height: 91,
                                             width: 88,
                                             child: Icon(
-                                              Icons.photo,
+                                             CupertinoIcons.photo,
                                               color: Color(0xFFC4C4C4),
                                             ),
                                           ),
@@ -516,8 +517,8 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                             controller.update();
                                           },
                                           child: Icon(
-                                            Icons.cancel_outlined,
-                                            color: Colors.red,
+                                           CupertinoIcons.delete,
+                                            color: custom_red,
                                             size: 25,
                                           ),
                                         ),
@@ -538,7 +539,7 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                   color: custom_green,
                                   size: 30,
                                 )
-                              : MaterialButton(
+                              : CupertinoButton(
                                   onPressed: () async {
                                     if (controller.formKey.currentState!
                                         .validate()) {
@@ -548,17 +549,17 @@ class CustomerAddNewComplaint extends StatelessWidget {
                                     }
                                   },
                                   color: const Color(0xff3FA54A),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5),
-                                  ),
-                                  height: 45,
-                                  minWidth: 287,
+                                  // shape: RoundedRectangleBorder(
+                                  //   borderRadius: BorderRadius.circular(5),
+                                  // ),
+                                 // height: 45,
+                                  minSize: 287,
                                   child: Text(
                                     "Submit",
                                     style: GoogleFonts.roboto(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                                      color: background_white,
                                     ),
                                   ),
                                 ),

@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -19,12 +20,12 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const PreferredSize(
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(middle: const PreferredSize(
           preferredSize: Size.fromHeight(60),
           child: AppBarWidget(title: "Profile"),
-        ),
-        body: SingleChildScrollView(
+        )),
+        child: SingleChildScrollView(
           child: SafeArea(
               child: Padding(
             padding: const EdgeInsets.all(20.0),

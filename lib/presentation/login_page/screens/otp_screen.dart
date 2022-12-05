@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nellikka/custom_colors.dart';
 import 'package:nellikka/dto/generateTokenDto/controller.dart';
 import 'package:nellikka/presentation/StringValues.dart';
 import 'package:nellikka/presentation/dashboard/common/storage.dart';
@@ -30,8 +31,8 @@ class _MyOTPScreenState extends State<MyOTPScreen> {
   Widget build(BuildContext context) {
     late var values = ModalRoute.of(context)!.settings.arguments as LoginModel;
     final userdata = GetStorage();
-    return Scaffold(
-      body: SafeArea(
+    return  CupertinoPageScaffold(
+      child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -129,7 +130,7 @@ class _MyOTPScreenState extends State<MyOTPScreen> {
                     Padding(
                       padding: const EdgeInsets.only(top: 0),
                       child: PinCodeTextField(
-                        backgroundColor: Colors.transparent,
+                        backgroundColor: transparent_color,
                         mainAxisAlignment: MainAxisAlignment.center,
                         appContext: context,
                         length: 4,
@@ -138,14 +139,14 @@ class _MyOTPScreenState extends State<MyOTPScreen> {
                             isButtonDisabled = false;
                           });
                         },
-                        textStyle: const TextStyle(color: Colors.black),
+                        textStyle: const TextStyle(color: custom_black),
                         controller: otpController,
                         keyboardType: TextInputType.number,
                         pastedTextStyle: TextStyle(
-                          color: Colors.green.shade600,
+                          color: custom_green,
                           fontWeight: FontWeight.bold,
                         ),
-                        hintStyle: const TextStyle(color: Colors.black),
+                        hintStyle: const TextStyle(color: custom_black),
                         pinTheme: PinTheme(
                           fieldOuterPadding: const EdgeInsets.only(
                             left: 5,
@@ -176,12 +177,10 @@ class _MyOTPScreenState extends State<MyOTPScreen> {
                   width: 360,
                   padding: const EdgeInsets.only(top: 10),
                   margin: const EdgeInsets.all(22),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        disabledBackgroundColor: const Color(0xFF3FA54A),
-                        backgroundColor: const Color(0xFF3FA54A),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5))),
+                  child: CupertinoButton(
+                    disabledColor: disabled_color,
+                    color:custom_green,
+                   borderRadius: BorderRadius.circular(5),
                     onPressed: isButtonDisabled
                         ? null
                         : () async {
@@ -285,7 +284,7 @@ errorMessage(message) {
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.SNACKBAR,
       timeInSecForIosWeb: 1,
-      backgroundColor: Colors.red,
-      textColor: Colors.white,
+      backgroundColor: custom_red,
+      textColor: background_white,
       fontSize: 16.0);
 }

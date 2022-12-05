@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/presentation/invoice/screens/invoice_list.dart';
 import 'package:nellikka/presentation/receipt/screens/receipt_list.dart';
@@ -15,10 +16,10 @@ class WalletMiddileLayer extends StatelessWidget {
       height: 80,
       width: 370,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-        InkWell(
+        GestureDetector(
                                         onTap: () {
                                           Navigator.of(context).push(
-                                              MaterialPageRoute(
+                                              CupertinoPageRoute(
                                                   builder: (context) =>
                                                        const InvoiceListScreen()));
                                         },
@@ -53,10 +54,10 @@ class WalletMiddileLayer extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      InkWell(
+                                      GestureDetector(
                                         onTap: () {
                                           Navigator.of(context).push(
-                                              MaterialPageRoute(
+                                              CupertinoPageRoute(
                                                   builder: (context) =>
                                                       ReceiptListScreen()));
                                         },
@@ -91,10 +92,10 @@ class WalletMiddileLayer extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      InkWell(
+                                      GestureDetector(
                                         onTap: () {
                                           Navigator.of(context).push(
-                                              MaterialPageRoute(
+                                              CupertinoPageRoute(
                                                   builder: (context) =>
                                                       const WalletCardListdDetails()));
                                         },

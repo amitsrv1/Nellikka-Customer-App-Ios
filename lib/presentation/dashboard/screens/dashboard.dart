@@ -17,13 +17,13 @@ import 'package:flutter_app_badger/flutter_app_badger.dart';
 var userID;
 final userdata = GetStorage();
 FirebaseMessaging messaging = FirebaseMessaging.instance;
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
-  //FlutterAppBadger.removeBadge();
-   FlutterAppBadger.updateBadgeCount(1);
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  print('a message was received:${message.messageId}');
-}
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+//   await Firebase.initializeApp();
+//   //FlutterAppBadger.removeBadge();
+//    FlutterAppBadger.updateBadgeCount(1);
+//   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+//   print('a message was received:${message.messageId}');
+// }
 
 class DashBoardScreen extends StatefulWidget {
  const DashBoardScreen({Key? key}) : super(key: key);
@@ -48,32 +48,32 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       sound: true,
     );
 
-    messaging.getInitialMessage();
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      Get.offNamed('/chat-screen');
+    // messaging.getInitialMessage();
+    // FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    //   Get.offNamed('/chat-screen');
       
      
       
-    });
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      Get.offNamed('/chat-screen');
-      FlutterAppBadger.removeBadge();
-    });
+    // });
+    // FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+    //   Get.offNamed('/chat-screen');
+    //   FlutterAppBadger.removeBadge();
+    // });
 
-    PushNotification();
+    // PushNotification();
 
-    await FirebaseMessaging.instance.setAutoInitEnabled(true);
-    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
-        ?.createNotificationChannel(channel);
-    await FirebaseMessaging.instance
-        .setForegroundNotificationPresentationOptions(
-      alert: true,
-      badge: true,
-      sound: true,
-    );
+    // await FirebaseMessaging.instance.setAutoInitEnabled(true);
+    // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+    // flutterLocalNotificationsPlugin
+    //     .resolvePlatformSpecificImplementation<
+    //         AndroidFlutterLocalNotificationsPlugin>()
+    //     ?.createNotificationChannel(channel);
+    // await FirebaseMessaging.instance
+    //     .setForegroundNotificationPresentationOptions(
+    //   alert: true,
+    //   badge: true,
+    //   sound: true,
+    // );
 
     GenerateTokenController().generateTokenf().then((response) {
       response.token;

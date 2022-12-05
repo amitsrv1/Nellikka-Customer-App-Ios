@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:get/get.dart';
+import 'package:nellikka/custom_colors.dart';
 import 'package:nellikka/dto/receiptListDto/controller/receipt_controller.dart';
 
 String? timeFormat;
@@ -11,7 +13,7 @@ Future<void> ReceiptListPopup(
     BuildContext context, ReceiptController controller, int index) async {
   //final InvoiceController invoiceController = Get.put(InvoiceController());
   //final _nameEditingController = TextEditingController();
-  showDialog(
+  showCupertinoDialog(
       context: context,
       builder: (ctx) {
         return GetBuilder<ReceiptController>(
@@ -25,7 +27,7 @@ Future<void> ReceiptListPopup(
                       height: 201,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.white),
+                          color: background_white),
                       child: Column(
                         children: [
                           Padding(
@@ -182,10 +184,14 @@ Future<void> ReceiptListPopup(
                                               color: const Color(0xFF626262)),
                                           child: Row(
                                             children: [
-                                              const Icon(
-                                                Icons.currency_rupee,
-                                                size: 15,
+                                               Text(
+                                                '₹',
+                                                style: GoogleFonts.mulish(
+                                                   fontSize: 15,
                                                 color: Color(0xFF626262),
+
+                                                ),
+                                               
                                               ),
                                               Text(
                                                 "${controller.data[index].recieptAmount}",
@@ -286,22 +292,22 @@ Future<void> ReceiptListPopup(
                           SizedBox(
                             height: 24.h,
                           ),
-                          MaterialButton(
+                          CupertinoButton(
                             onPressed: () {
                               Get.back();
                             },
                             color: const Color(0xff3FA54A),
-                            minWidth: 223.w,
-                            height: 46.h,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
+                            minSize: 223.w,
+                           // height: 46.h,
+                            // shape: RoundedRectangleBorder(
+                            //   borderRadius: BorderRadius.circular(5),
+                            // ),
                             child: Text(
                               "Ok",
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 18.sp,
-                                color: Colors.white,
+                                color: background_white,
                               ),
                             ),
                           ),

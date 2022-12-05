@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:nellikka/dto/api_status.dart';
 import 'package:nellikka/dto/sliderListDto/controllers.dart';
 import 'package:nellikka/presentation/receipt/screens/receipt_list.dart';
@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/custom_colors.dart';
+
 import 'package:nellikka/dto/userProfileDto/controllers.dart';
 import 'package:nellikka/dto/userProfileDto/model.dart';
 import 'package:nellikka/presentation/StringValues.dart';
@@ -44,7 +45,8 @@ class _DashboardHeaderState extends State<DashboardHeader> {
               : controller.profile.success == null
                   ? const Center(
                       child: Center(
-                        child: SpinKitFadingCircle(color: custom_green),
+                        child:  CupertinoActivityIndicator(
+                      radius: 20.0, color: CupertinoColors.activeBlue),
                       ),
                     )
                   : Container(
@@ -61,9 +63,9 @@ class _DashboardHeaderState extends State<DashboardHeader> {
                               margin:
                                   const EdgeInsets.only(right: 15, left: 20),
                               clipBehavior: Clip.none,
-                              child: Card(
+                              child: Container(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                borderOnForeground: true,
+                               // borderOnForeground: true,
                                 child: Column(
                                   children: [
                                     Padding(
@@ -111,20 +113,20 @@ class _DashboardHeaderState extends State<DashboardHeader> {
                                         ],
                                       ),
                                     ),
-                                    const Divider(
-                                      thickness: 1,
-                                      color: Color(0xFFCADAE7),
-                                    ),
+                                    // const Divider(
+                                    //   thickness: 1,
+                                    //   color: Color(0xFFCADAE7),
+                                    // ),
                                     Column(
                                       children: [
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            InkWell(
+                                            GestureDetector(
                                         onTap: () {
                                           Navigator.of(context).push(
-                                              MaterialPageRoute(
+                                              CupertinoPageRoute(
                                                   builder: (context) =>
                                                        const InvoiceListScreen()));
                                         },
@@ -159,10 +161,10 @@ class _DashboardHeaderState extends State<DashboardHeader> {
                                           ],
                                         ),
                                       ),
-                                          InkWell(
+                                          GestureDetector(
                                         onTap: () {
                                           Navigator.of(context).push(
-                                              MaterialPageRoute(
+                                               CupertinoPageRoute(
                                                   builder: (context) =>
                                                       ReceiptListScreen()));
                                         },
@@ -197,10 +199,10 @@ class _DashboardHeaderState extends State<DashboardHeader> {
                                           ],
                                         ),
                                       ),
-                                      InkWell(
+                                      GestureDetector(
                                         onTap: () {
                                           Navigator.of(context).push(
-                                              MaterialPageRoute(
+                                               CupertinoPageRoute(
                                                   builder: (context) =>
                                                        StatementScreen()));
                                         },
@@ -235,10 +237,10 @@ class _DashboardHeaderState extends State<DashboardHeader> {
                                           ],
                                         ),
                                       ),
-                                      InkWell(
+                                      GestureDetector(
                                         onTap: () {
                                           Navigator.of(context).push(
-                                              MaterialPageRoute(
+                                               CupertinoPageRoute(
                                                   builder: (context) =>
                                                        VisitLogScreen()));
                                         },

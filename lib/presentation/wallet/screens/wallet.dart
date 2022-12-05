@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/custom_colors.dart';
@@ -23,12 +24,14 @@ class WalletScreen extends StatefulWidget {
 class _WalletScreenState extends State<WalletScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const PreferredSize(
+    return CupertinoPageScaffold(
+      navigationBar:CupertinoNavigationBar(
+        middle:  const PreferredSize(
           preferredSize: Size.fromHeight(60),
           child: AppBarWidget(title: "Wallet"),
         ),
-        body: ListView(
+      ),
+        child: ListView(
           children: [
             SafeArea(
                 child: Column(children: [
@@ -76,10 +79,10 @@ class _WalletScreenState extends State<WalletScreen> {
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
-                                          InkWell(
+                                         GestureDetector(
                                             onTap: () {
                                               Navigator.of(context).push(
-                                                  MaterialPageRoute(
+                                                  CupertinoPageRoute(
                                                       builder: (context) =>
                                                           const ViewAllWallet()));
                                             },

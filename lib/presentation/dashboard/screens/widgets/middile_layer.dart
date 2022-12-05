@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nellikka/presentation/complaints/complaints.dart';
 import 'package:nellikka/presentation/contact_us/contact.dart';
@@ -31,7 +33,7 @@ class MiddileLayer extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
+                          Navigator.of(context).push(CupertinoPageRoute(
                               builder: (context) =>  WasteRequestScreen()));
                         },
                         child: SizedBox(
@@ -67,9 +69,9 @@ class MiddileLayer extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      InkWell(
+                      GestureDetector(
                          onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
+                        Navigator.of(context).push(CupertinoPageRoute(
                             builder: (context) => const Complaints()));
                       },
 
@@ -106,9 +108,9 @@ class MiddileLayer extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      InkWell(
+                      GestureDetector(
                         onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => PhoneBook()));
+                          Navigator.of(context).push(CupertinoPageRoute(builder: (context) => PhoneBook()));
                         },
                         child: SizedBox(
                           height: 53,
@@ -151,7 +153,7 @@ class MiddileLayer extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
+                        Navigator.of(context).push(CupertinoPageRoute(
                             builder: (context) => const ProfileScreen()));
                       },
                       child: SizedBox(
@@ -187,9 +189,9 @@ class MiddileLayer extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    InkWell(
+                    GestureDetector(
                        onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
+                        Navigator.of(context).push(CupertinoPageRoute(
                             builder: (context) => const WalletScreen()));
                       },
                       child: SizedBox(
@@ -228,7 +230,7 @@ class MiddileLayer extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => const Contact()));
+                            CupertinoPageRoute(builder: (context) => const Contact()));
                       },
                       child: SizedBox(
                         height: 53,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,12 +30,14 @@ class _InvoiceListScreenState extends State<InvoiceListScreen> {
   @override
   Widget build(BuildContext context) {
     //final InvoiceController invoiceController = Get.put(InvoiceController());
-    return Scaffold(
-        appBar: const PreferredSize(
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: const PreferredSize(
           preferredSize: Size.fromHeight(60),
           child: AppBarWidget(title: "Invoice"),
         ),
-        body: SafeArea(
+        ),
+        child: SafeArea(
             child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: GetBuilder<InvoiceController>(
@@ -195,12 +198,12 @@ class InvoiceListView extends StatelessWidget {
                             CircleAvatar(
                               radius: 13,
                               backgroundColor: const Color(0xFFD5E8FF),
-                              child: InkWell(
+                              child: GestureDetector(
                                 onTap: () => InvoiceListPopup(
                                     context, controller, index),
                                 child: CircleAvatar(
                                   radius: 11,
-                                  backgroundColor: Colors.white,
+                                  backgroundColor: background_white,
                                   child: Image.asset(
                                     "assets/images/eye-icon.png",
                                     width: 14,
@@ -280,12 +283,12 @@ class InvoiceListView extends StatelessWidget {
               //             CircleAvatar(
               //                           radius: 13,
               //                           backgroundColor: const Color(0xFFD5E8FF),
-              //                           child: InkWell(
+              //                           child: GestureDetector(
               //                             onTap: () =>
               //                     InvoiceListPopup(context,controller,index),
               //                 child: CircleAvatar(
               //                               radius: 11,
-              //                               backgroundColor: Colors.white,
+              //                               backgroundColor: background_white,
               //                               child: Image.asset(
               //                                 "assets/images/eye-icon.png",
               //                                 width: 16,
